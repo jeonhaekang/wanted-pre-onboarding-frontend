@@ -1,7 +1,7 @@
 import "./LoginContainer.scss";
 
 const LoginContainer = () => {
-  return <div></div>;
+  return <div>로그인</div>;
 };
 
 export default LoginContainer;

@@ -1,7 +1,10 @@
 import { PERMISSION_ALL, PERMISSION_LOGIN } from "../constants/permission";
 
 import RouteComponent from "../components/common/RouteComponent";
-import MainContainer from "../pages/MainContainer";
+import MainContainer from "pages/MainContainer";
+import LoginContainer from "pages/LoginContainer";
+import JoinContainer from "pages/JoinContainer";
+import TodoContainer from "pages/TodoContainer";
 
 const defaultRoutes = [
   {
@@ -20,7 +23,7 @@ const defaultRoutes = [
       <RouteComponent
         permission={PERMISSION_ALL}
         title={"로그인"}
-        component={MainContainer}
+        component={LoginContainer}
       />
     ),
   },
@@ -30,7 +33,7 @@ const defaultRoutes = [
       <RouteComponent
         permission={PERMISSION_ALL}
         title={"회원가입"}
-        component={MainContainer}
+        component={JoinContainer}
       />
     ),
   },
@@ -40,7 +43,7 @@ const defaultRoutes = [
       <RouteComponent
         permission={PERMISSION_LOGIN}
         title={"투두"}
-        component={MainContainer}
+        component={TodoContainer}
       />
     ),
   },
