@@ -1,4 +1,4 @@
-import "./JoinContainer.scss";
+import "./JoinContainer.module.scss";
 
 const JoinContainer = () => {
   return <div>회원가입</div>;
