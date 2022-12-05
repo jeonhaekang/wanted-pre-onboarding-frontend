@@ -1,0 +1,7 @@
+@use "/src/styles/constants/colors";
+
+.text-input {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
