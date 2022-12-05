@@ -7,7 +7,7 @@ export const ApplicationContext = ({ children }) => {
 
   return (
     <applicationContext.Provider value={actions}>
-      {children}
+      <div className="root-container">{children}</div>
     </applicationContext.Provider>
   );
 };

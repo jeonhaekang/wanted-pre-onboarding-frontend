@@ -4,7 +4,7 @@ import Button, { BUTTON_COLOR_WHITE } from "components/core/Button";
 
 const MainContainer = () => {
   return (
-    <div className="common-container">
+    <div>
       <h1 className="common-title">메인페이지</h1>
 
       <div className={styles["button-box"]}>
