@@ -1,0 +1,27 @@
+@use "/src/styles/mixins/typography";
+@use "/src/styles/constants/colors";
+
+.label {
+  color: colors.$GS_CONTENT_2;
+}
+
+.required {
+  color: colors.$R_BASE;
+  margin-left: 4px;
+}
+
+.large {
+  @include typography.paragraph2;
+}
+
+.small {
+  @include typography.paragraph3;
+}
+
+.message {
+  color: colors.$GS_CONTENT_3;
+}
+
+.error {
+  color: colors.$R_BASE;
+}
