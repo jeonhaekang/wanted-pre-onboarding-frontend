@@ -1,0 +1,15 @@
+@use "/src/styles/mixins/typography";
+
+.common-container {
+  margin: 0 auto;
+  margin-top: 60px;
+  max-width: 400px;
+}
+
+.common-title {
+  @include typography.heading4;
+}
+
+.full {
+  width: 100%;
+}

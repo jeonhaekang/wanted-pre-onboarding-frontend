@@ -7,3 +7,49 @@
   -webkit-line-clamp: $line;
   -webkit-box-orient: vertical;
 }
+
+@mixin font($size, $line-height, $font-weight) {
+  font-size: $size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+@mixin heading1($font-weight: 400) {
+  @include font(48px, 60px, $font-weight);
+}
+
+@mixin heading2($font-weight: 400) {
+  @include font(36px, 48px, $font-weight);
+}
+
+@mixin heading3($font-weight: 400) {
+  @include font(24px, 32px, $font-weight);
+}
+
+@mixin heading4($font-weight: 400) {
+  @include font(20px, 28px, $font-weight);
+}
+
+@mixin heading5($font-weight: 400) {
+  @include font(16px, 24px, $font-weight);
+}
+
+@mixin heading6($font-weight: 400) {
+  @include font(13px, 20px, $font-weight);
+}
+
+@mixin paragraph1($font-weight: 400) {
+  @include font(32px, 20px, $font-weight);
+}
+
+@mixin paragraph2($font-weight: 400) {
+  @include font(16px, 24px, $font-weight);
+}
+
+@mixin paragraph3($font-weight: 400) {
+  @include font(14px, 18px, $font-weight);
+}
+
+@mixin paragraph4($font-weight: 400) {
+  @include font(12px, 16px, $font-weight);
+}
