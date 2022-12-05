@@ -1,0 +1,27 @@
+@use "/src/styles/constants/colors";
+@use "/src/styles/mixins/typography";
+
+.input {
+  @include typography.paragraph3;
+  font-size: 14px;
+  height: 40px;
+  padding: 0 14px;
+  border: 1px solid colors.$GS_BORDER;
+  border-radius: 8px;
+  background-color: white;
+  transition: 200ms;
+
+  &:hover {
+    border: 1px solid colors.$GS_CONTENT_3;
+  }
+
+  &:focus {
+    border: 1px solid colors.$B_BASE;
+    box-shadow: colors.$FS_BLUE;
+  }
+
+  &.error {
+    border-color: colors.$R_BASE;
+    box-shadow: colors.$FS_RED;
+  }
+}
