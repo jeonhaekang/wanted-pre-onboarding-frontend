@@ -1,0 +1,52 @@
+@use "/src/styles/constants/colors";
+@use "/src/styles/mixins/typography";
+@use "/src/styles/mixins/flexbox";
+
+.button {
+  @include flexbox.flexbox;
+  border-radius: 8px;
+  transition: 200ms;
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+.blue {
+  color: colors.$WHITE;
+  background-color: colors.$B_BASE;
+  box-shadow: colors.$DS_2;
+
+  &:hover {
+    background-color: colors.$B_HOVER;
+  }
+}
+
+.white {
+  color: colors.$GS_CONTENT_1;
+  border: 1px solid colors.$GS_BORDER;
+  background-color: colors.$GS_BG_PRIMARY;
+  box-shadow: colors.$DS_1;
+
+  &:hover {
+    background-color: colors.$GS_BG_SECONDARY;
+  }
+}
+
+.large {
+  @include typography.heading4;
+  height: 52px;
+  padding: 0 16px;
+}
+
+.medium {
+  @include typography.heading5;
+  height: 40px;
+  padding: 0 12px;
+}
+
+.small {
+  @include typography.heading6;
+  height: 28px;
+  padding: 0 8px;
+}
