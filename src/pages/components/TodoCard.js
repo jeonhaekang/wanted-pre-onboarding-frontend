@@ -38,7 +38,7 @@ const TodoCard = (props) => {
 
     if (todoModel.isSuccess(response)) {
       setTodos((prev) =>
-        prev.map((_todo) => (_todo.id === id ? { ..._todo, ...form } : _todo))
+        prev.map((_todo) => (_todo.id === id ? response.data : _todo))
       );
     }
   }, [form, id, setTodos, todoModel]);
@@ -79,7 +79,6 @@ const TodoCard = (props) => {
       </Button>
       <Button
         type={"button"}
-        disabled={!validation}
         color={BUTTON_COLOR_RED}
         onClick={() => setIsEdit(false)}
       >
