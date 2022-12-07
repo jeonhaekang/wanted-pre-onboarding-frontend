@@ -43,6 +43,30 @@ class BaseModel {
     return this.request(request);
   }
 
+  isSuccess(response) {
+    const { status } = response;
+
+    let result = false;
+
+    if (status === 200 || status === 201) {
+      result = true;
+    }
+
+    return result;
+  }
+
+  isError(response) {
+    const { status } = response;
+
+    let result = false;
+
+    if (status === 400 || status === 401) {
+      result = true;
+    }
+
+    return result;
+  }
+
   async request({ baseUrl, method, path, headers, data, params }) {
     let authorization = localStorage.getItem("access_token");
 
@@ -70,9 +94,9 @@ class BaseModel {
 
       const response = await axios(request);
 
-      return response.data;
+      return response;
     } catch (error) {
-      return null;
+      return error.response;
     }
   }
 }
