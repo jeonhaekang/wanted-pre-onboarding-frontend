@@ -9,7 +9,7 @@ const useForm = (formId, initForm) => {
   const checkValidation = useCallback(() => {
     const _form = document.getElementById(formId);
 
-    const _inputs = _form.getElementsByTagName("input");
+    const _inputs = _form?.getElementsByTagName("input") || [];
 
     let result = true;
 
@@ -26,12 +26,18 @@ const useForm = (formId, initForm) => {
 
   const setValue = useCallback(
     (e) => {
-      const { name, value } = e.target;
+      const { name, value, type, checked } = e.target;
 
       checkValidation();
 
+      let _value = value;
+
+      if (type === "checkbox") {
+        _value = checked;
+      }
+
       setForm((prev) => {
-        return { ...prev, [name]: value };
+        return { ...prev, [name]: _value };
       });
     },
     [checkValidation]
