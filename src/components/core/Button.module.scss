@@ -6,6 +6,7 @@
   @include flexbox.flexbox;
   border-radius: 8px;
   transition: 200ms;
+  white-space: nowrap;
 
   &:disabled {
     opacity: 0.5;
