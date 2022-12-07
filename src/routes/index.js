@@ -1,4 +1,8 @@
-import { PERMISSION_ALL, PERMISSION_LOGIN } from "../constants/permission";
+import {
+  PERMISSION_ALL,
+  PERMISSION_LOGIN,
+  PERMISSION_NOT_LOGIN,
+} from "../constants/permission";
 
 import RouteComponent from "../components/common/RouteComponent";
 import MainContainer from "pages/MainContainer";
@@ -21,7 +25,7 @@ const defaultRoutes = [
     path: "/login",
     component: (
       <RouteComponent
-        permission={PERMISSION_ALL}
+        permission={PERMISSION_NOT_LOGIN}
         title={"로그인"}
         component={LoginContainer}
       />
@@ -31,7 +35,7 @@ const defaultRoutes = [
     path: "/join",
     component: (
       <RouteComponent
-        permission={PERMISSION_ALL}
+        permission={PERMISSION_NOT_LOGIN}
         title={"회원가입"}
         component={JoinContainer}
       />
