@@ -4,14 +4,14 @@ import cn from "classnames";
 import { useCallback, useMemo, useState } from "react";
 
 const Input = (props) => {
-  const { onChange } = props;
+  const { onChange, full } = props;
 
   const [isError, setIsError] = useState(false);
 
   const _props = useMemo(() => {
     const __props = { ...props };
 
-    ["onChange"].forEach((key) => {
+    ["onChange", "full"].forEach((key) => {
       delete __props[key];
     });
 
@@ -37,7 +37,7 @@ const Input = (props) => {
       onInvalid={(e) => {
         e.preventDefault();
       }}
-      className={cn(styles.input, { [styles.error]: isError })}
+      className={cn(styles.input, { full, [styles.error]: isError })}
       {..._props}
     />
   );
