@@ -1,0 +1,17 @@
+@use "/src/styles/constants/colors";
+
+.todo-form {
+  display: grid;
+  grid-template-columns: 1fr 60px;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  margin-top: 20px;
+  border-radius: 8px;
+}
