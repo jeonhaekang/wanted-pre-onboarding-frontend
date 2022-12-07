@@ -1,0 +1,29 @@
+@use "/src/styles/mixins/position";
+@use "/src/styles/constants/colors";
+
+.check-box {
+  position: relative;
+  border: 1px solid colors.$GS_BORDER;
+  min-width: 20px;
+  min-height: 20px;
+  border-radius: 4px;
+  transition: 200ms;
+
+  &:hover {
+    border-color: colors.$GS_CONTENT_3;
+  }
+
+  &:checked {
+    border-color: colors.$B_BASE;
+    background-color: colors.$WHITE;
+
+    &::before {
+      @include position.posCenter;
+      content: " ";
+      width: 16px;
+      height: 16px;
+      border-radius: 3px;
+      background-color: colors.$B_BASE;
+    }
+  }
+}
