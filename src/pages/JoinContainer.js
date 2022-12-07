@@ -18,14 +18,14 @@ const INIT_FORM = {
 const JoinContainer = () => {
   const navigate = useNavigate();
 
-  const { setValue, getData, validation } = useForm(INIT_FORM);
+  const { form, setValue, validation } = useForm("join-form", INIT_FORM);
 
   const account = useMemo(() => new AccountModel(), []);
 
   const requestJoin = useCallback(
     async (e) => {
       e.preventDefault();
-      const response = await account.join(getData());
+      const response = await account.join(form);
 
       if (account.isSuccess(response)) {
         localStorage.setItem("token", response.data.access_token);
@@ -38,14 +38,18 @@ const JoinContainer = () => {
         alert(response.data.message);
       }
     },
-    [account, getData, navigate]
+    [account, form, navigate]
   );
 
   return (
     <div>
       <h1 className="common-title">회원가입</h1>
 
-      <form className={styles["join-form"]} onSubmit={requestJoin}>
+      <form
+        id="join-form"
+        className={styles["join-form"]}
+        onSubmit={requestJoin}
+      >
         <TextInput
           type={"email"}
           name={"email"}
