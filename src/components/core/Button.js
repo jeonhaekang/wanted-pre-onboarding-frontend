@@ -10,6 +10,7 @@ export const BUTTON_SIZE_SMALL = "small";
 
 export const BUTTON_COLOR_BLUE = "blue";
 export const BUTTON_COLOR_WHITE = "white";
+export const BUTTON_COLOR_RED = "red";
 
 const Button = (props) => {
   const {

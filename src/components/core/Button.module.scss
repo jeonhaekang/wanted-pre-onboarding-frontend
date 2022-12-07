@@ -22,6 +22,16 @@
   }
 }
 
+.red {
+  color: colors.$WHITE;
+  background-color: colors.$R_BASE;
+  box-shadow: colors.$DS_2;
+
+  &:hover {
+    background-color: colors.$R_HOVER;
+  }
+}
+
 .white {
   color: colors.$GS_CONTENT_1;
   border: 1px solid colors.$GS_BORDER;
