@@ -48,7 +48,7 @@ class BaseModel {
 
     let result = false;
 
-    if (status === 200 || status === 201) {
+    if (status === 200 || status === 201 || status === 204) {
       result = true;
     }
 
@@ -68,7 +68,7 @@ class BaseModel {
   }
 
   async request({ baseUrl, method, path, headers, data, params }) {
-    let authorization = localStorage.getItem("access_token");
+    let authorization = localStorage.getItem("token");
 
     let baseHeaders = {
       "Content-Type": "application/json",
